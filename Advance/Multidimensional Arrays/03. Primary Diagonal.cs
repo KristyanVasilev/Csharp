@@ -1,30 +1,29 @@
 ﻿using System;
 using System.Linq;
 
-namespace _02._Sum_Matrix_Columns
+namespace _03._Primary_Diagonal
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int[] input = Console.ReadLine().Split(", ").Select(int.Parse).ToArray();
-            int rows = input[0];
-            int cols = input[1];
+            int sizeOfSquareMatrix = int.Parse(Console.ReadLine());
+            int rows = sizeOfSquareMatrix;
+            int cols = sizeOfSquareMatrix;
             int[,] matrix = ReadMatrix(rows, cols);
-            SumMatrixColumns(matrix);
+            Console.WriteLine(DiagonalSumOfMatrix(matrix));
         }
 
-        private static void SumMatrixColumns(int[,] matrix)
+        private static int DiagonalSumOfMatrix(int[,] matrix)
         {
+            int sum = 0;
+            int count = 0;
             for (int col = 0; col < matrix.GetLength(1); col++)
             {
-                int sum = 0;
-                for (int row = 0; row < matrix.GetLength(0); row++)
-                {
-                    sum += matrix[row, col];
-                }
-                Console.WriteLine(sum);
+                sum += matrix[col, count];
+                count++;
             }
+            return sum;
         }
 
         private static int[,] ReadMatrix(int rows, int cols)
@@ -32,14 +31,13 @@ namespace _02._Sum_Matrix_Columns
             int[,] matrix = new int[rows, cols];
             for (int row = 0; row < rows; row++)
             {
-                int[] input = Console.ReadLine().Split(" ").Select(int.Parse).ToArray();
+                int[] input = Console.ReadLine().Split().Select(int.Parse).ToArray();
                 for (int col = 0; col < cols; col++)
                 {
                     matrix[row, col] = input[col];
                 }
             }
             return matrix;
-
         }
     }
 }
