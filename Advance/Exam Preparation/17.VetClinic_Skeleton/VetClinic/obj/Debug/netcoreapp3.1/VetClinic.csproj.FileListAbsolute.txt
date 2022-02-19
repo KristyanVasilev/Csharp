@@ -1,0 +1,14 @@
+C:\Users\HP\Desktop\exam Prep\03. VetClinic_Skeleton\VetClinic\bin\Debug\netcoreapp3.1\VetClinic.exe
+C:\Users\HP\Desktop\exam Prep\03. VetClinic_Skeleton\VetClinic\bin\Debug\netcoreapp3.1\VetClinic.deps.json
+C:\Users\HP\Desktop\exam Prep\03. VetClinic_Skeleton\VetClinic\bin\Debug\netcoreapp3.1\VetClinic.runtimeconfig.json
+C:\Users\HP\Desktop\exam Prep\03. VetClinic_Skeleton\VetClinic\bin\Debug\netcoreapp3.1\VetClinic.runtimeconfig.dev.json
+C:\Users\HP\Desktop\exam Prep\03. VetClinic_Skeleton\VetClinic\bin\Debug\netcoreapp3.1\VetClinic.dll
+C:\Users\HP\Desktop\exam Prep\03. VetClinic_Skeleton\VetClinic\bin\Debug\netcoreapp3.1\VetClinic.pdb
+C:\Users\HP\Desktop\exam Prep\03. VetClinic_Skeleton\VetClinic\obj\Debug\netcoreapp3.1\VetClinic.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\exam Prep\03. VetClinic_Skeleton\VetClinic\obj\Debug\netcoreapp3.1\VetClinic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Desktop\exam Prep\03. VetClinic_Skeleton\VetClinic\obj\Debug\netcoreapp3.1\VetClinic.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\exam Prep\03. VetClinic_Skeleton\VetClinic\obj\Debug\netcoreapp3.1\VetClinic.AssemblyInfo.cs
+C:\Users\HP\Desktop\exam Prep\03. VetClinic_Skeleton\VetClinic\obj\Debug\netcoreapp3.1\VetClinic.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\exam Prep\03. VetClinic_Skeleton\VetClinic\obj\Debug\netcoreapp3.1\VetClinic.dll
+C:\Users\HP\Desktop\exam Prep\03. VetClinic_Skeleton\VetClinic\obj\Debug\netcoreapp3.1\VetClinic.pdb
+C:\Users\HP\Desktop\exam Prep\03. VetClinic_Skeleton\VetClinic\obj\Debug\netcoreapp3.1\VetClinic.genruntimeconfig.cache
