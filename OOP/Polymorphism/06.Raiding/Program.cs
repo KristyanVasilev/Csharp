@@ -39,13 +39,15 @@ namespace Raiding
                     Console.WriteLine("Invalid hero!");
                     i--;
                     continue;
-                }
-                Console.WriteLine(hero.CastAbility());
+                }              
                 heroes.Add(hero);
             }
 
             int bossHealth = int.Parse(Console.ReadLine());
-
+            foreach (var hero1 in heroes)
+            {
+                Console.WriteLine(hero1.CastAbility());
+            }
             if (heroes.Sum(x => x.Power) >= bossHealth)
             {
                 Console.WriteLine("Victory!");
