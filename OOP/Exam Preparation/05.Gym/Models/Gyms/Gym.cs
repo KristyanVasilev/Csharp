@@ -79,20 +79,19 @@ namespace Gym.Models.Gyms
             var sb = new StringBuilder();
 
             sb.AppendLine($"{this.Name} is a {this.GetType().Name}:");
+
+            string result;
             if (athletes.Count <= 0)
             {
-                sb.AppendLine("No athletes");
+               result="No athletes";
             }
             else
             {
-                foreach (var athlete in athletes)
-                {
-                    sb.Append(athlete.FullName + " ");
-                }
-                sb.AppendLine();
+                result = String.Join(", ", Athletes.Select(x => x.FullName));
             }
+            sb.AppendLine($"Athletes: {result}");
             sb.AppendLine($"Equipment total count: {equipments.Count()}");
-            sb.AppendLine($"Equipment total weight: {this.EquipmentWeight :f2} grams");
+            sb.AppendLine($"Equipment total weight: {this.EquipmentWeight:f2} grams");
 
             return sb.ToString().TrimEnd();
         }
