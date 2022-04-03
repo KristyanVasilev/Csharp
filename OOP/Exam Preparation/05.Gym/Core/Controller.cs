@@ -101,7 +101,7 @@ namespace Gym.Core
         public string InsertEquipment(string gymName, string equipmentType)
         {
             IGym gym = gyms.FirstOrDefault(x => x.Name == gymName);
-            Equipment equipment = equipments.FindByType(equipmentType);
+            IEquipment equipment = equipments.FindByType(equipmentType);
             if (equipment == null)
             {
                 throw new InvalidOperationException($"There isn’t equipment of type {equipmentType}.");

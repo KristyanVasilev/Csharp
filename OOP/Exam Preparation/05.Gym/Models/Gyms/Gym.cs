@@ -11,16 +11,12 @@ namespace Gym.Models.Gyms
     public abstract class Gym : IGym
     {
         private string name;
-        private int capacity;
-        private List<IEquipment> equipments;
-        private List<IAthlete> athletes;
 
         public Gym(string name, int capacity)
         {
             this.Name = name;
-            this.Capacity = capacity;
-            equipments = new List<IEquipment>();
-            athletes = new List<IAthlete>();
+            this.Equipment = new List<IEquipment>();
+            this.Athletes = new List<IAthlete>();
         }
         public string Name
         {
@@ -35,40 +31,33 @@ namespace Gym.Models.Gyms
             }
         }
 
-        public int Capacity
-        {
-            get { return capacity; }
-            private set
-            {
-                capacity = value;
-            }
-        }
+        public int Capacity { get; private set; }
 
         public double EquipmentWeight
-            => equipments.Sum(x => x.Weight);
+            => Equipment.Sum(x => x.Weight);
 
-        public ICollection<IEquipment> Equipment => equipments;
+        public ICollection<IEquipment> Equipment { get; }
 
-        public ICollection<IAthlete> Athletes => athletes;
+        public ICollection<IAthlete> Athletes { get; }
 
         public void AddAthlete(IAthlete athlete)
         {
-            if (athletes.Count >= Capacity)
+            if (Athletes.Count >= Capacity)
             {
                 throw new InvalidOperationException("Not enough space in the gym.");
             }
 
-            athletes.Add(athlete);
+            Athletes.Add(athlete);
         }
 
         public void AddEquipment(IEquipment equipment)
         {
-            equipments.Add(equipment);
+            Equipment.Add(equipment);
         }
 
         public void Exercise()
         {
-            foreach (var athlete in athletes)
+            foreach (var athlete in Athletes)
             {
                 athlete.Exercise();
             }
@@ -81,7 +70,7 @@ namespace Gym.Models.Gyms
             sb.AppendLine($"{this.Name} is a {this.GetType().Name}:");
 
             string result;
-            if (athletes.Count <= 0)
+            if (Athletes.Count <= 0)
             {
                result="No athletes";
             }
@@ -90,7 +79,7 @@ namespace Gym.Models.Gyms
                 result = String.Join(", ", Athletes.Select(x => x.FullName));
             }
             sb.AppendLine($"Athletes: {result}");
-            sb.AppendLine($"Equipment total count: {equipments.Count()}");
+            sb.AppendLine($"Equipment total count: {Equipment.Count()}");
             sb.AppendLine($"Equipment total weight: {this.EquipmentWeight:f2} grams");
 
             return sb.ToString().TrimEnd();
@@ -98,7 +87,7 @@ namespace Gym.Models.Gyms
 
         public bool RemoveAthlete(IAthlete athlete)
         {
-            return athletes.Remove(athlete);
+            return Athletes.Remove(athlete);
         }
     }
 }

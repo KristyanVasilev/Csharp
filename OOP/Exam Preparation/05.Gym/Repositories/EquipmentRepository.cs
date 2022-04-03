@@ -1,4 +1,5 @@
 ﻿using Gym.Models.Equipment;
+using Gym.Models.Equipment.Contracts;
 using Gym.Repositories.Contracts;
 using System;
 using System.Collections.Generic;
@@ -7,26 +8,26 @@ using System.Text;
 
 namespace Gym.Repositories
 {
-    public class EquipmentRepository : IRepository<Equipment>
+    public class EquipmentRepository : IRepository<IEquipment>
     {
-        private List<Equipment> equipments;
+        private List<IEquipment> equipments;
         public EquipmentRepository()
         {
-            equipments = new List<Equipment>();
+            equipments = new List<IEquipment>();
         }
-        public IReadOnlyCollection<Equipment> Models => equipments;
+        public IReadOnlyCollection<IEquipment> Models => equipments;
 
-        public void Add(Equipment model)
+        public void Add(IEquipment model)
         {
             equipments.Add(model);
         }
 
-        public Equipment FindByType(string type)
+        public IEquipment FindByType(string type)
         {
             return equipments.FirstOrDefault(x => x.GetType().Name == type);
         }
 
-        public bool Remove(Equipment model)
+        public bool Remove(IEquipment model)
         {
             return equipments.Remove(model);
         }
