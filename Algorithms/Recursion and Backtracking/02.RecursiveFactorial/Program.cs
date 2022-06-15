@@ -1,22 +1,25 @@
 ﻿using System;
+using System.Linq;
 
-namespace _04._Recursive_Factorial
+namespace _02.RecursiveFactorial
 {
     class Program
     {
         static void Main(string[] args)
         {
             int n = int.Parse(Console.ReadLine());
-            Console.WriteLine(CalcFacturielRecur(n));
+            int sum = GetFactoriel(n);
+            Console.WriteLine(sum);
         }
 
-        private static int CalcFacturielRecur(int n)
+        private static int GetFactoriel(int n)
         {
             if (n == 0)
             {
                 return 1;
             }
-            return n * CalcFacturielRecur(n - 1);
+
+            return n * GetFactoriel(n - 1);
         }
     }
 }
